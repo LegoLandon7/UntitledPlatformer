@@ -3,9 +3,8 @@ let playerObject = new GameObject(new vec2(1, -1), "resources/player.png",
      new CollisionBox(new vec2(0, 0), "rect", tileSize, tileSize));
 
 function update(dt) {
-    /* Dev camera controls
     const move = 100 * dt;
-
+    /* Dev camera controls
     if (keys["arrowdown"]) {
         camPos.y += move;
     }
