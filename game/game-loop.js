@@ -1,3 +1,5 @@
+import { update } from "./player.js";
+
 let lastTime = performance.now(); // store initial time
 let fps = 0;
 
@@ -14,7 +16,7 @@ function gameLoop(currentTime) {
 
     //#region Logic
 
-    update();
+    update(delta);
     
     // Draw map
     ctx.clearRect(0, 0, canvas.width, canvas.height);
