@@ -1,5 +1,5 @@
 // Initialize player
-playerObject = new GameObject(1, -1, "player.png",
+let playerObject = new GameObject(new vec2(1, -1), "player.png",
      new CollisionBox(new vec2(0, 0), "rect", tileSize, tileSize));
 
 function update(dt) {
@@ -19,6 +19,6 @@ function update(dt) {
         camPos.x += move;
     }
 
-    playerObject.pos = camPos;
+    //playerObject.pos = camPos;
     playerObject.draw(ctx);
 }
