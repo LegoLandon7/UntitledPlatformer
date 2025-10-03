@@ -13,12 +13,13 @@ function gameLoop(currentTime) {
     fpsLabel.textContent = "FPS: " + Math.round(fps);
 
     //#region Logic
-
-    update(delta);
     
     // Draw map
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     mainMap.drawAll(ctx);
+
+    // Player / Camera
+    update(delta);
 
     //#endregion
 
