@@ -58,6 +58,7 @@ function updateDimensions() {
 
     zoom = Math.min(zoomX, zoomY);
 
+    console.log(internalWidth, internalHeight, zoomX, zoomY, zoom);
 }
 
 window.addEventListener("resize", updateDimensions);
