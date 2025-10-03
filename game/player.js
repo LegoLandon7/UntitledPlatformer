@@ -32,6 +32,6 @@ function update(dt) {
     }
 
     playerPos = camPos;
-    playerObject.pos = playerPos.convertToTiles();
+    playerObject.pos = playerPos;
     playerObject.draw(ctx);
 }
