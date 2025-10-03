@@ -299,7 +299,7 @@ const groundHeight = 5;
 // CHAT GPT FOR TESTING ->
 
 // Loop over each column
-const groundTop = 5; // height of the grass "surface" in tiles
+const groundTop = 5 - groundHeight; // height of the grass "surface" in tiles
 
 for (let x = 0; x < groundWidth; x++) {
     for (let y = 0; y < groundHeight; y++) {
@@ -318,7 +318,7 @@ for (let x = 0; x < groundWidth; x++) {
 }
 
 // Draw all blocks
-mainMap.drawAll(ctx);
+//mainMap.drawAll(ctx);
 
 //#endregion
 
