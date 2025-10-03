@@ -291,10 +291,10 @@ const groundHeight = 10;
 // CHAT GPT FOR TESTING ->
 
 // Loop over each column
-for (let x = -10; x < groundWidth; x++) {
+for (let x = 0; x < groundWidth; x++) {
     // Loop from bottom (y=0) to top (y=groundHeight-1)
-    for (let y = 0; y < groundHeight; y++) {
-        if (y === 0) texture = "resources/dirt.png";
+    for (let y = -10; y < groundHeight; y++) {
+        if (y === 10) texture = "resources/dirt.png";
         else texture = "resources/grass.png";
         let block = new GameObject(x, y, texture);
         mainMap.add(block);
