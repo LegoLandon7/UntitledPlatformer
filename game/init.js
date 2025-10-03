@@ -51,6 +51,13 @@ function updateDimensions() {
 
     internalWidth = Math.floor(canvas.width);
     internalHeight = Math.floor(canvas.height);
+
+    // Zooming
+    let zoomX = internalWidth / (20 * tileSize);
+    let zoomY = internalHeight / (15 * tileSize);
+
+    zoom = Math.min(zoomX, zoomY);
+
 }
 
 window.addEventListener("resize", updateDimensions);
@@ -286,16 +293,24 @@ let mainMap = new GridMap();
 
 //test
 const groundWidth = 100;
-const groundHeight = 10;
+const groundHeight = 5;
 
 // CHAT GPT FOR TESTING ->
 
 // Loop over each column
+const groundTop = 5; // height of the grass "surface" in tiles
+
 for (let x = 0; x < groundWidth; x++) {
-    // Loop from bottom (y=0) to top (y=groundHeight-1)
-    for (let y = -10; y < groundHeight; y++) {
-        if (y === 10) texture = "resources/dirt.png";
-        else texture = "resources/grass.png";
+    for (let y = 0; y < groundHeight; y++) {
+        let texture;
+        if (y === groundTop) {
+            texture = "resources/grass.png"; // grass at the surface
+        } else if (y > groundTop) {
+            texture = "resources/dirt.png"; // everything below is dirt
+        } else {
+            continue; // skip air above
+        }
+
         let block = new GameObject(x, y, texture);
         mainMap.add(block);
     }
