@@ -20,7 +20,11 @@ function update(dt) {
         playerPos.x += move;
     }
 
-    camPos = playerPos;
+    // set camera relative to player
+    camPos.x = playerPos.x - internalWidth / (2 * zoom);
+    camPos.y = playerPos.y - internalHeight / (2 * zoom);
+
+    // draw player
     playerObject.pos = playerPos;
     playerObject.draw(ctx);
 }
