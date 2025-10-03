@@ -320,7 +320,7 @@ for (let x = 0; x < groundWidth; x++) {
             continue; // skip air above
         }
 
-        let block = new GameObject(new vec2(x, y), texture);
+        let block = new GameObject(new vec2(x, y), texture, new collisionBox(new vec2(0, 0), "rect", tileSize, tileSize));
         mainMap.add(block);
     }
 }
