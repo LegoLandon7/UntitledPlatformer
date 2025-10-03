@@ -1,7 +1,7 @@
 //#region Settings
 
-const tileSize = 32;
-const zoom = 1;
+tileSize = 32;
+zoom = 1;
 
 //#endregion
 
@@ -289,7 +289,7 @@ class GridMap {
 
 //#region Map
 
-let mainMap = new GridMap();
+mainMap = new GridMap();
 
 //test
 const groundWidth = 100;
