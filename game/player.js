@@ -1,5 +1,5 @@
 // Initialize player
-let playerObject = new GameObject(new vec2(1, -1), "player.png",
+let playerObject = new GameObject(new vec2(1, -1), "resources/player.png",
      new CollisionBox(new vec2(0, 0), "rect", tileSize, tileSize));
 
 function update(dt) {
