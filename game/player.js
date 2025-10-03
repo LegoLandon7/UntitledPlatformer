@@ -31,7 +31,7 @@ function update(dt) {
         playerPos.x += move;
     }
 
-    playerPos = camPos;
+    camPos = playerPos;
     playerObject.pos = playerPos;
     playerObject.draw(ctx);
 }
