@@ -185,9 +185,14 @@ class CollisionBox {
 
 // GameObject class
 class GameObject {
-    constructor(x = 0, y = 0, texture = "resources/blank.png", collisionBox = null) {
+    static pos;
+    static texture;
+    static loaded;
+    static collisionBox;
+    
+    constructor(pos, texture = "resources/blank.png", collisionBox = null) {
         // World position (tile -> pixel)
-        this.pos = new vec2(x * tileSize, y * tileSize);
+        this.pos = pos.mul(tileSize);
 
         // Collision box
         this.collisionBox = collisionBox;
@@ -246,12 +251,12 @@ class GameObject {
 Example object initialization ->
 
 let ball = new GameObject(
-    1, 1, "ball.png",
+    new vec2(1, 1), "ball.png",
     new CollisionBox(new vec2(16,16), "circle", 0, 0, 16) // circle radius 16
 );
 
 let crate = new GameObject(
-    2, 1, "crate.png",
+    new vec2(2, 1), "crate.png",
     new CollisionBox(new vec2(8,8), "rect", 48, 48) // rect width & height 48
 );
 */
@@ -312,7 +317,7 @@ for (let x = 0; x < groundWidth; x++) {
             continue; // skip air above
         }
 
-        let block = new GameObject(x, y, texture);
+        let block = new GameObject(new vec2(x, y), texture);
         mainMap.add(block);
     }
 }
