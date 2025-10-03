@@ -1,5 +1,3 @@
-import { update } from "./player.js";
-
 let lastTime = performance.now(); // store initial time
 let fps = 0;
 

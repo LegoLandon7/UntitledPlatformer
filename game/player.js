@@ -1,4 +1,4 @@
-export function update(dt) {
+function update(dt) {
     // Dev camera controls
     if (keys["arrowdown"]) {
         camPos.y += 1 * dt;
