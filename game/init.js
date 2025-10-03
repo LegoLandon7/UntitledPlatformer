@@ -7,7 +7,7 @@ zoom = 1;
 
 //#region Keys
 
-const keys = {};
+keys = {};
 
 window.addEventListener("keydown", (e) => {
     keys[e.key.toLowerCase()] = true;
