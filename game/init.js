@@ -124,6 +124,9 @@ class vec2 {
 
     // Dot product
     dot(p) { return this.x * p.x + this.y * p.y; }
+
+    // Convert to tile
+    convertToTiles() { return new vec2 (this.x / tileSize, this.y / tileSize); }
 }
 
 // Variables
@@ -189,7 +192,7 @@ class GameObject {
     static texture;
     static loaded;
     static collisionBox;
-    
+
     constructor(pos, texture = "resources/blank.png", collisionBox = null) {
         // World position (tile -> pixel)
         this.pos = pos.mul(tileSize);
