@@ -1,17 +1,17 @@
 function update(dt) {
     // Dev camera controls
+    const move = 100 * dt;
+
     if (keys["arrowdown"]) {
-        camPos.y += 1 * dt;
+        camPos.y += move;
     }
     if (keys["arrowup"]) {
-        camPos.y -= 1 * dt;
+        camPos.y -= move;
     }
     if (keys["arrowleft"]) {
-        camPos.x -= 1 * dt;
+        camPos.x -= move;
     }
     if (keys["arrowright"]) {
-        camPos.x += 1 * dt;
+        camPos.x += move;
     }
-
-    // else camPos = playerPos;
 }
